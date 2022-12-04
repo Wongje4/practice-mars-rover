@@ -39,6 +39,9 @@ public class MarsRover {
         if (original_direction.equals("S")) {
             position.setDirection("E");
         }
+        if (original_direction.equals("E")) {
+            position.setDirection("N");
+        }
     }
 
     private void moverForward(String original_direction) {
