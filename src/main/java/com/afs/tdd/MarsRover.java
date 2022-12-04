@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     private Position position;
     private String command;
@@ -20,7 +22,15 @@ public class MarsRover {
         if (command.equals("R")){
             turnRight(position.getDirection());
         }
+        if (command.length()>1){
+            multipleCommands(command);
+        }
+    }
 
+    private void multipleCommands(String command) {
+        Arrays.stream(command.split(""))
+                .forEach( oneCommand ->
+                executeCommand(getPosition(), oneCommand));
     }
 
     private void turnRight(String original_direction) {
