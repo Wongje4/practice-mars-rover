@@ -48,6 +48,10 @@ public class MarsRover {
         if (original_direction.equals("S")) {
             position.setY(position.getY() - 1);
         }
+        if (original_direction.equals("E")) {
+            position.setX(position.getX() + 1);
+        }
+
     }
 
     public Position getPosition() {
