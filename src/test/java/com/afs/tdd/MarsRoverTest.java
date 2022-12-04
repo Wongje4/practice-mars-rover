@@ -172,6 +172,23 @@ class MarsRoverTest {
     }
 
     // 00WM -> -10W
+    @Test
+    void should__10W_when_executeCommand_given_00WM() {
+        //given
+
+        Position position = new Position(0, 0, "W");
+        String command = "M";
+
+
+        //when
+        MarsRover marsRover = new MarsRover(position, command);
+        marsRover.executeCommand(position, command);
+
+        //then
+        assertEquals(-1, marsRover.getPosition().getX());
+        assertEquals(0, marsRover.getPosition().getY());
+        assertEquals("W", marsRover.getPosition().getDirection());
+    }
     // 00WL -> 00S
     // 00WR -> 00N
 
