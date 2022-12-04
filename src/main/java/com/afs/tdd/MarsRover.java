@@ -24,7 +24,6 @@ public class MarsRover {
     }
 
     private void turnRight(String original_direction) {
-        position.setDirection("E");
         if (original_direction.equals("N")) {
             position.setDirection("E");
         }
