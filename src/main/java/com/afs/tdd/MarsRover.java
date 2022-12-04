@@ -30,6 +30,9 @@ public class MarsRover {
         if (original_direction.equals("S")) {
             position.setDirection("W");
         }
+        if (original_direction.equals("E")) {
+            position.setDirection("S");
+        }
     }
 
     private void turnLeft(String original_direction) {
