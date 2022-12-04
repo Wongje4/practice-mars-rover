@@ -15,7 +15,7 @@ public class MarsRover {
             moverForward(position.getDirection());
         }
         if (command.equals("L")){
-            turnLeft();
+            turnLeft(position.getDirection());
         }
         if (command.equals("R")){
             turnRight();
@@ -27,8 +27,13 @@ public class MarsRover {
         position.setDirection("E");
     }
 
-    private void turnLeft() {
-        position.setDirection("W");
+    private void turnLeft(String original_direction) {
+        if (original_direction.equals("N")) {
+            position.setDirection("W");
+        }
+        if (original_direction.equals("S")) {
+            position.setDirection("E");
+        }
     }
 
     private void moverForward(String original_direction) {
